@@ -2,6 +2,7 @@
 	"name": "André Cruz",
 	"job": "Front-End developer em formação",
 	"github": "Cruz-Andre",
+	"banner": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Nighthawks_by_Edward_Hopper_1942.jpg",
 	"playlist": {
 		"jogos": [
 			{
@@ -127,6 +128,25 @@
 				"title": "O que é o C#? #HipstersPontoTube",
 				"url": "https://www.youtube.com/watch?v=0JWMVc1CqpA",
 				"thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
+			}
+		]
+	},
+	"favoritos": {
+		"AluraTubes Favoritos": [
+			{
+				"github": "Cruz-Andre",
+				"name": "André Cruz",
+				"url": "#"
+			},
+			{
+				"github": "omariosouto",
+				"name": "@omariosouto",
+				"url": "#"
+			},
+			{
+				"github": "peas",
+				"name": "@peas",
+				"url": "#"
 			}
 		]
 	}

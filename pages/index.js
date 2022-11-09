@@ -22,7 +22,7 @@ function HomePage() {
 			}}>
 				<Menu />
 				<Header />
-				<Timeline playlist={config.playlist} />
+				<Timeline playlist={config.playlist} favoritos={config.favoritos} />
 			</div>
 		</>
 	)
@@ -32,27 +32,39 @@ export default HomePage
 
 
 const StyledHeader = styled.div`
-	img {
+	.avatar {
 		width: 80px;
 		height: 80px;
 		border-radius: 50%;
 	}
 	.user-info {
-		margin-top: 50px;
+		//margin-top: 50px;
 		display: flex;
 		align-items: center;
 		width: 100%;
 		padding: 16px 32px;
 		gap: 16px;
 	}
+	.header-div-banner {
+		margin-top: 56px;
+		width: 100%;
+		height: 230px;
+		overflow: hidden;
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	}
+	.header-banner{
+		width: 100%;		
+	}
 `
 function Header() {
 	return (
 		<StyledHeader>
-			{/* <img src="banner" /> */}
+			<div className="header-div-banner">
+				<img className="header-banner" src={config.banner} />
+			</div>
 
 			<section className="user-info">
-				<img src={`https://github.com/${config.github}.png`} />
+				<img className="avatar" src={`https://github.com/${config.github}.png`} />
 				<div>
 					<h2>{config.name}</h2>
 					<p>{config.job}</p>
@@ -65,7 +77,8 @@ function Header() {
 
 function Timeline(props) {
 	// console.log("Dentro do componente Timeline: ", props.playlist);
-	const playlistNames = Object.keys(props.playlist)
+	const playlistNames = Object.keys(props.playlist);
+	const favoritosNames = Object.keys(props.favoritos);
 
 	// Statement
 	// Retorno por expressão
@@ -84,6 +97,29 @@ function Timeline(props) {
 									<a href={video.url}>
 										<img src={video.thumb} />
 										<span>{video.title}</span>
+									</a>
+								)
+							})}
+						</div>
+					</section>
+				)
+			})}
+			{favoritosNames.map((favoritosName) => {
+				const favoritos = props.favoritos[favoritosName];
+				console.log(favoritosName);
+				console.log(favoritos);
+				return(
+					<section>
+						<h2>{favoritosName}</h2>
+						<div className="favoritos">
+							{favoritos.map((favorito) => {
+								return (
+									<a className="favorito-container" href={favorito.url}>
+										<img 
+											className="favorito-img" 
+											src={`https://github.com/${favorito.github}.png`} 
+										/>
+										<span className="favorito-text">{favorito.name}</span>
 									</a>
 								)
 							})}
