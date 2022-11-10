@@ -7,12 +7,14 @@
 		"jogos": [
 			{
 				"title": "R3E - Zakspeed Capri - Spa-Francorchamps",
-				"url": "https://www.youtube.com/watch?v=uql0_If1ctA",
+				"url": "https://www.youtube.com/embed/uql0_If1ctA",
+				"videoPage": "/video",
 				"thumb": "https://img.youtube.com/vi/uql0_If1ctA/hqdefault.jpg"
 			},
 			{
 				"title": "RaceRoom - Formula Jr - Sepang South",
-				"url": "https://www.youtube.com/watch?v=sKEQNHKJiWE",
+				"url": "https://www.youtube.com/embed/sKEQNHKJiWE",
+				"videoPage": "/video",
 				"thumb": "https://img.youtube.com/vi/sKEQNHKJiWE/hqdefault.jpg"
 			},
 			{

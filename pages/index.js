@@ -1,19 +1,15 @@
 import React from "react";
 import config from "../aluratube-config.json"
 import styled from "styled-components"
-import { CSSReset } from "../src/components/CSSReset"
+
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 
 function HomePage() {
-	const estilosDaHomePage = {
-		// backgroundColor: "red" 
-	};
 	const [valorDoFiltro, setValorDoFiltro] = React.useState("")
 
 	return (
 		<>
-			<CSSReset />
 			<div style={{
 				display: "flex",
 				flexDirection: "column",
@@ -32,6 +28,7 @@ function HomePage() {
 export default HomePage
 
 const StyledHeader = styled.div`
+	background-color: ${({theme}) => theme.backgroundLevel1};
 	.avatar {
 		width: 80px;
 		height: 80px;
@@ -59,7 +56,7 @@ const StyleBanner = styled.div`
 `
 function Header() {
 	return (
-		<StyledHeader>
+		<StyledHeader >
 			<StyleBanner>
 				<img className="header-banner" src={config.banner} />
 			</StyleBanner>
@@ -101,7 +98,7 @@ function Timeline({ searchValue, ...props }) {
 								})
 								.map((video) => {
 									return (
-										<a key={video.url} href={video.url}>
+										<a key={video.url} href={video.videoPage}>
 											<img src={video.thumb} />
 											<span>{video.title}</span>
 										</a>
@@ -122,7 +119,11 @@ function Timeline({ searchValue, ...props }) {
 							{favoritos
 								.map((favorito) => {
 									return (
-										<a key={favorito.name} className="favorito-container" href={favorito.url}>
+										<a 
+											key={favorito.name} 
+											className="favorito-container" 
+											href={favorito.url}
+										>
 											<img
 												className="favorito-img"
 												src={`https://github.com/${favorito.github}.png`}

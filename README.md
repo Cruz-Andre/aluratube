@@ -3,8 +3,8 @@
 <h3>AULA 01: A Web, os componentes e o deploy!:white_check_mark:</h3>
 <h4>Desafios da Aula 1 a fazer: Adicionar o Banner; Criar a área de "Aluratubes Favoritos" :white_check_mark:</h4>
 <h3>AULA 02: Entendento state e fazendo a busca do Aluratube :white_check_mark:</h3>
-<h3>AULA 03: em breve...</h3>
-<h3>AULA 04: em breve...</h3>
+<h3>AULA 03: Implementando dark mode com contextAPI :white_check_mark:</h3>
+<h3>AULA 04: Criando nossos próprios hooks</h3>
 <h3>AULA 05: em breve...</h3>
 
 
