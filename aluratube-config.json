@@ -7,13 +7,13 @@
 		"jogos": [
 			{
 				"title": "R3E - Zakspeed Capri - Spa-Francorchamps",
-				"url": "https://www.youtube.com/embed/uql0_If1ctA",
+				"url": "https://www.youtube.com/watch?v=uql0_If1ctA",
 				"videoPage": "/video",
 				"thumb": "https://img.youtube.com/vi/uql0_If1ctA/hqdefault.jpg"
 			},
 			{
 				"title": "RaceRoom - Formula Jr - Sepang South",
-				"url": "https://www.youtube.com/embed/sKEQNHKJiWE",
+				"url": "https://www.youtube.com/watch?v=sKEQNHKJiWE",
 				"videoPage": "/video",
 				"thumb": "https://img.youtube.com/vi/sKEQNHKJiWE/hqdefault.jpg"
 			},
@@ -100,11 +100,6 @@
 				"title": "Node JS: Construindo CRUDs com file system focando em serialização e JSON",
 				"url": "https://www.youtube.com/watch?v=dvd3pNYh7So",
 				"thumb": "https://img.youtube.com/vi/dvd3pNYh7So/hqdefault.jpg"
-			},
-			{
-				"title": "Node JS: Construindo CRUDs com file system focando em serialização e JSON",
-				"url": "https://www.youtube.com/watch?v=8q36rNS5yVo",
-				"thumb": "https://img.youtube.com/vi/8q36rNS5yVo/hqdefault.jpg"
 			},
 			{
 				"title": "O que é o Java? #HipstersPontoTube",

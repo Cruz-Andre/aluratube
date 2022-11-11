@@ -4,9 +4,36 @@ import styled from "styled-components"
 
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
+import { videoService } from "../src/services/video.Service";
+
 
 function HomePage() {
+	const service = videoService()
+	
 	const [valorDoFiltro, setValorDoFiltro] = React.useState("")
+
+	const [playlist, setPlaylist] = React.useState({}) //config.playlist
+
+	React.useEffect(() => {
+		//console.log("useEffect")
+		service
+			.getAllVideos()
+			.then((dados) => {
+				//console.log(dados.data);
+				// Forma Imutável
+				const novasPlaylist = { ...playlist }
+				dados.data.forEach((video) => {
+					if (!novasPlaylist[video.playlist]) {
+						novasPlaylist[video.playlist] = []
+					}
+					novasPlaylist[video.playlist].push(video)
+				})
+				setPlaylist(novasPlaylist);
+			})
+
+	}, [])
+
+	//console.log("playlist pronto: ", playlist)
 
 	return (
 		<>
@@ -19,7 +46,7 @@ function HomePage() {
 				{/* Prop Drilling */}
 				<Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
 				<Header />
-				<Timeline searchValue={valorDoFiltro} playlist={config.playlist} favoritos={config.favoritos} />
+				<Timeline searchValue={valorDoFiltro}  playlist={playlist} favoritos={config.favoritos} />
 			</div>
 		</>
 	)
@@ -28,7 +55,7 @@ function HomePage() {
 export default HomePage
 
 const StyledHeader = styled.div`
-	background-color: ${({theme}) => theme.backgroundLevel1};
+	background-color: ${({ theme }) => theme.backgroundLevel1};
 	.avatar {
 		width: 80px;
 		height: 80px;
@@ -98,7 +125,7 @@ function Timeline({ searchValue, ...props }) {
 								})
 								.map((video) => {
 									return (
-										<a key={video.url} href={video.videoPage}>
+										<a key={video.url} href={video.url}>
 											<img src={video.thumb} />
 											<span>{video.title}</span>
 										</a>
@@ -119,9 +146,9 @@ function Timeline({ searchValue, ...props }) {
 							{favoritos
 								.map((favorito) => {
 									return (
-										<a 
-											key={favorito.name} 
-											className="favorito-container" 
+										<a
+											key={favorito.name}
+											className="favorito-container"
 											href={favorito.url}
 										>
 											<img

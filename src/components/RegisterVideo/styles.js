@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const StyledRegisterVideo = styled.div`
+  .cadastro-titulo{
+    text-align: center;
+    margin-bottom: 1rem;
+  }
   .add-video {
     width: 50px;
     height: 50px;

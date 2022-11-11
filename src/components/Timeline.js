@@ -8,7 +8,6 @@ export const StyledTimeline = styled.div`
   .favoritos {
     display: flex;
     overflow-x: auto;
-
   }
   .favorito-container{
     width: 100px;
