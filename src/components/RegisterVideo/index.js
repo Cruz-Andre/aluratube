@@ -75,24 +75,33 @@ export default function RegisterVideo() {
 							</button>
 							<h4 className="cadastro-titulo">Cadastrar Vídeos</h4>
 							<input
+								type="text"
 								placeholder="Titulo do vídeo"
 								name="titulo"
 								value={formCadastro.values.titulo}
 								onChange={formCadastro.handleChange}
+								pattern="^([ \u00c0-\u00ffa-zA-Z])+$"
+								title="Digite somente caracteres alfabeticos"
 								required
 							/>
 							<input
-								placeholder="URL completa do Youtube"
+								type="text"
+								placeholder="URL padrão do Youtube"
 								name="url"
 								value={formCadastro.values.url}
 								onChange={formCadastro.handleChange}
+								pattern="^((https:)\/\/)((www)\.)((youtube\.com))(\/(watch)\?v=)([\w\-]+)$"
+								title="Somente o link padrão--> https://youtube.com/watch?v=[ID do vídeo]"
 								required
 							/>
 							<input
+								type="text"
 								placeholder="Nome da playlist"
 								name="playlist"
 								value={formCadastro.values.playlist}
 								onChange={formCadastro.handleChange}
+								pattern="^([ \u00c0-\u00ffa-zA-Z])+$"
+								title="Digite somente caracteres alfabeticos"
 								required
 							/>
 							<button type="submit">

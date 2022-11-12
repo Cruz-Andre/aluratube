@@ -5,11 +5,12 @@ import styled from "styled-components"
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 import { videoService } from "../src/services/video.Service";
+import Link from "next/link";
 
 
 function HomePage() {
 	const service = videoService()
-	
+
 	const [valorDoFiltro, setValorDoFiltro] = React.useState("")
 
 	const [playlist, setPlaylist] = React.useState({}) //config.playlist
@@ -46,7 +47,7 @@ function HomePage() {
 				{/* Prop Drilling */}
 				<Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
 				<Header />
-				<Timeline searchValue={valorDoFiltro}  playlist={playlist} favoritos={config.favoritos} />
+				<Timeline searchValue={valorDoFiltro} playlist={playlist} favoritos={config.favoritos} />
 			</div>
 		</>
 	)
@@ -124,11 +125,22 @@ function Timeline({ searchValue, ...props }) {
 									return titleNormalized.includes(searchValueNormalized)
 								})
 								.map((video) => {
-									return (
-										<a key={video.url} href={video.url}>
-											<img src={video.thumb} />
-											<span>{video.title}</span>
-										</a>
+									return(
+									<Link
+										key={video.url}
+										href="/video/"
+										as={`/video/${video['url'].split('v=')[1]}`}
+									>
+										<img src={video.thumb} />
+										<span>{video.title}</span>
+									</Link>
+									
+									// return (
+									// 	<a key={video.url} href={video.url}>
+									// 		<img src={video.thumb} />
+									// 		<span>{video.title}</span>
+									// 	</a>
+									// )
 									)
 								})}
 						</div>
