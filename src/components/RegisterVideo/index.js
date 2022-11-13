@@ -80,8 +80,8 @@ export default function RegisterVideo() {
 								name="titulo"
 								value={formCadastro.values.titulo}
 								onChange={formCadastro.handleChange}
-								pattern="^([ \u00c0-\u00ffa-zA-Z])+$"
-								title="Digite somente caracteres alfabeticos"
+								pattern="^([ \u00c0-\u00ffa-zA-Z0-9])+$"
+								title="Digite somente caracteres alfanuméricos"
 								required
 							/>
 							<input
@@ -90,7 +90,7 @@ export default function RegisterVideo() {
 								name="url"
 								value={formCadastro.values.url}
 								onChange={formCadastro.handleChange}
-								pattern="^((https:)\/\/)((www)\.)((youtube\.com))(\/(watch)\?v=)([\w\-]+)$"
+								pattern="^((https:)\/\/)((www)\.)((youtube\.com))(\/(watch)\?v=)((\w|-){11})?$" //([\w\-]+)$
 								title="Somente o link padrão--> https://youtube.com/watch?v=[ID do vídeo]"
 								required
 							/>

@@ -1,7 +1,10 @@
+import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Menu from "../../src/components/Menu";
+import { StyledMenu } from "../../src/components/Menu/styles";
 import styled from "styled-components"
+import DarkModeSwitch from "../../src/components/Menu/components/DarkModeSwitch";
+import Logo from "../../src/components/Menu/components/Logo";
 
 const StyledVideo = styled.div`
     margin: 100px auto 0 auto;
@@ -17,6 +20,7 @@ const StyledVideo = styled.div`
     }
     .link-botao {
         color: ${({ theme }) => theme.textColorBase};
+        font-size: large;
     }
 
 `
@@ -27,7 +31,12 @@ export default function Video() {
 
     return (
         <>
-            <Menu />
+            <StyledMenu>
+                <div>
+                    <Logo />
+                </div>
+                <DarkModeSwitch />
+            </StyledMenu>
             <StyledVideo>
                 <iframe
                     width="560"
